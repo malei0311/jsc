@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es2015",
+    "lib": ["esnext", "dom"],
+    "declaration": true,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "newLine": "lf",
+    "forceConsistentCasingInFileNames": false,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "removeComments": true,
+    "strict": true,
+    "composite": true,
+  }
+}

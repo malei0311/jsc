@@ -1,0 +1,29 @@
+{
+  "name": "@jsc/shared",
+  "version": "0.0.1",
+  "description": "jsc shared",
+  "author": "malei0311 <leiman0311l@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "import": "./lib/index.mjs",
+    "require": "./lib/index.cjs"
+  },
+  "main": "lib/index.cjs",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "!lib/dts"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:malei0311/jsc.git"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
+  }
+}

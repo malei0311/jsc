@@ -1,0 +1,16 @@
+{
+  "useWorkspaces": true,
+  "npmClient": "npm",
+  "version": "independent",
+  "command": {
+    "version": {
+      "allowBranch": ["master", "feature/*"],
+      "conventionalCommits": true
+    },
+    "publish": {
+      "message": "chore(release): publish",
+      "registry": "https://registry.npmjs.org/",
+      "ignoreChanges": ["**/*.md"]
+    }
+  }
+}

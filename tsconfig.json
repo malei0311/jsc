@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "packages/fluent"
+    },
+    {
+      "path": "packages/static"
+    },
+    {
+      "path": "packages/shared"
+    },
+  ],
+  "include": ["./vitest.config.ts", "./packages/*/tests/**/*.ts"],
+}
