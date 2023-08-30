@@ -21,11 +21,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:malei0311/jsc.git"
+    "url": "git@github.com:malei0311/jsc.git",
+    "directory": "packages/fluent"
   },
   "scripts": {
     "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
