@@ -21,11 +21,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:malei0311/jsc.git"
+    "url": "git@github.com:malei0311/jsc.git",
+    "directory": "packages/static"
   },
   "scripts": {
     "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
   },
+  "optionalDependencies": {
+    "@jsc/platform-darwin-x64": "^0.0.1"
+  },
   "dependencies": {
+    "@jsc/shared": "^0.0.1"
   }
 }
