@@ -1,0 +1,33 @@
+{
+  "name": "@jsc/platform-darwin-x64",
+  "version": "0.0.1",
+  "description": "MacOS x64 binary for JSC",
+  "author": "malei0311 <leiman0311l@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:malei0311/jsc.git",
+    "directory": "platforms/darwin-x64"
+  },
+  "scripts": {
+    "postinstall": "chmod u+x jsc"
+  },
+  "keywords": [
+    "jsc",
+    "javascriptCore",
+    "binary",
+    "darwin",
+    "x64"
+  ],
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "jsc": "2.26.1"
+}
