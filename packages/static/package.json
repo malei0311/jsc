@@ -24,6 +24,9 @@
     "url": "git@github.com:malei0311/jsc.git",
     "directory": "packages/static"
   },
+  "engines": {
+    "node": ">=16.13.0"
+  },
   "scripts": {
     "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
   },

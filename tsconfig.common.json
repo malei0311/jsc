@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "es2015",
-    "target": "es2015",
+    "module": "es2020",
+    "target": "es2020",
     "lib": ["esnext", "dom"],
     "declaration": true,
     "sourceMap": false,
@@ -17,6 +17,6 @@
     "downlevelIteration": true,
     "removeComments": true,
     "strict": true,
-    "composite": true,
+    "composite": true
   }
 }
