@@ -1,4 +1,6 @@
 # jsc
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmalei0311%2Fjsc.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmalei0311%2Fjsc?ref=badge_shield)
+
 
 使用 [project-references][project-references] 分隔代码，加速编译。
 
@@ -47,3 +49,7 @@ find . -name 'node_modules' -prune -o -type f -name "*.js" -print
 
 <!-- references -->
 [project-references]: https://www.typescriptlang.org/docs/handbook/project-references.html
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmalei0311%2Fjsc.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmalei0311%2Fjsc?ref=badge_large)
