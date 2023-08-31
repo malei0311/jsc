@@ -1,6 +1,7 @@
 import os from 'os';
 import path from 'path';
 import { isFileSync, readJSONSync } from '@jsc/shared';
+import { fileURLToPath } from 'url';
 
 type BinaryInfo =
   | {
@@ -14,8 +15,7 @@ type BinaryInfo =
 const platform = `${os.platform()}-${os.arch()}`;
 const packageScope = '@jsc';
 const packageName = `platform-${platform}`;
-// TODO: __dirname in esm
-const dirname = __dirname;
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function isPlatformSupported() {
   const staticPackageJson = readJSONSync(path.join(dirname, '../package.json'));
