@@ -1,6 +1,7 @@
-import pluginTypescript from '@rollup/plugin-typescript';
-import terser from '@rollup/plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
+import progress from 'rollup-plugin-progress';
+import filesize from 'rollup-plugin-filesize';
 
 const envInput = process.env.INPUT_FILE;
 
@@ -22,7 +23,13 @@ function buildJS(input, output, format) {
   const config = {
     input,
     output: [format === 'es' ? esOutputConfig : cjsOutputConfig],
-    plugins: [pluginTypescript(), terser()],
+    plugins: [
+      progress(),
+      typescript(),
+      filesize({
+        showMinifiedSize: false,
+      }),
+    ],
   };
 
   return config;
