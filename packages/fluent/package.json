@@ -1,7 +1,7 @@
 {
   "name": "@jsc/fluent",
   "version": "0.0.1",
-  "description": "jsc fluent",
+  "description": "a fluent api to jsc",
   "author": "malei0311 <leiman0311l@gmail.com>",
   "homepage": "",
   "license": "MIT",

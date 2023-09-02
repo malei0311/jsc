@@ -1,1 +1,1 @@
-export const foo = () => {};
+export * from './exec-async';
