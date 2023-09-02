@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "cz": "cz",
-    "clean": "rm -rf ./packages/*/lib && rm -rf ./packages/*/.rollup.cache && rm -rf ./packages/*/tsconfig.tsbuildinfo",
-    "build": "npm run clean && lerna run build",
+    "clean": "del-cli ./packages/*/lib && del-cli ./packages/*/.rollup.cache && del-cli ./packages/*/tsconfig.tsbuildinfo",
+    "build": "npm run clean && lerna run build --ignore '@jsc/platform-*'",
     "lint": "eslint --format=pretty --ext .js,jsx,.ts,.tsx .",
     "lint:fix": "npm run eslint -- --fix",
     "prettier": "prettier -c -w \"**/*.{cjs,mjs,js,ts,json}\"",
@@ -30,6 +30,7 @@
     "@typescript-eslint/parser": "^5.62.0",
     "commitizen": "^4.2.4",
     "cz-lerna-changelog": "^2.0.3",
+    "del-cli": "^5.0.0",
     "eslint": "^8.44.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
