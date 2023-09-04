@@ -4,7 +4,7 @@
   "scripts": {
     "cz": "cz",
     "clean": "del-cli ./packages/*/lib && del-cli ./packages/*/.rollup.cache && del-cli ./packages/*/tsconfig.tsbuildinfo",
-    "build": "npm run clean && lerna run build --ignore '@jsc/platform-*'",
+    "build": "npm run clean && lerna run build --ignore '@x-jsc/platform-*'",
     "lint": "eslint --format=pretty --ext .js,jsx,.ts,.tsx .",
     "lint:fix": "npm run eslint -- --fix",
     "prettier": "prettier -c -w \"**/*.{cjs,mjs,js,ts,json}\"",

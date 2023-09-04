@@ -1,5 +1,5 @@
 {
-  "name": "@jsc/static",
+  "name": "@x-jsc/static",
   "version": "0.1.0",
   "description": "jsc static",
   "author": "malei0311 <leiman0311l@gmail.com>",
@@ -17,6 +17,7 @@
     "!lib/dts"
   ],
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "repository": {
@@ -31,9 +32,9 @@
     "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
   },
   "optionalDependencies": {
-    "@jsc/platform-darwin-x64": "^0.1.0"
+    "@x-jsc/platform-darwin-x64": "^0.1.0"
   },
   "dependencies": {
-    "@jsc/shared": "^0.1.0"
+    "@x-jsc/shared": "^0.1.0"
   }
 }

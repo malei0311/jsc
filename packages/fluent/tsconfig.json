@@ -6,13 +6,13 @@
     "outDir": "lib",
     "declarationDir": "dts",
     "paths": {
-      "@jsc/*": ["../*/src"]
+      "@x-jsc/*": ["../*/src"]
     }
   },
   "exclude": ["tests", "lib"],
   "references": [
     {
       "path": "../shared"
-    },
+    }
   ]
 }

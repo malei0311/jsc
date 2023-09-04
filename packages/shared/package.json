@@ -1,5 +1,5 @@
 {
-  "name": "@jsc/shared",
+  "name": "@x-jsc/shared",
   "version": "0.1.0",
   "description": "jsc shared",
   "author": "malei0311 <leiman0311l@gmail.com>",
@@ -17,6 +17,7 @@
     "!lib/dts"
   ],
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "repository": {

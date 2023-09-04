@@ -1,2 +1,2 @@
-# @jsc/static
+# @x-jsc/static
 

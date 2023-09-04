@@ -2,7 +2,7 @@ import type { ChildProcess } from 'node:child_process';
 
 import { spawn } from 'node:child_process';
 import { inspect } from 'node:util';
-import { noop, isNil } from '@jsc/shared';
+import { noop, isNil } from '@x-jsc/shared';
 
 type Resolve = (out: ExecResult) => void;
 

@@ -1,2 +1,2 @@
-# @jsc/shared
+# @x-jsc/shared
 

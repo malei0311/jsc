@@ -1,6 +1,6 @@
 import os from 'os';
 import path from 'path';
-import { isFileSync, readJSONSync } from '@jsc/shared';
+import { isFileSync, readJSONSync } from '@x-jsc/shared';
 import { fileURLToPath } from 'url';
 
 type BinaryInfo =
@@ -13,7 +13,7 @@ type BinaryInfo =
     };
 
 const platform = `${os.platform()}-${os.arch()}`;
-const packageScope = '@jsc';
+const packageScope = '@x-jsc';
 const packageName = `platform-${platform}`;
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -47,7 +47,7 @@ function getBinaryVersion(packagePath: string): string {
 function sniffBinaryInfo(): BinaryInfo {
   if (!isPlatformSupported()) {
     return {
-      error: new Error(`[@jsc/static] unsupported platform: ${platform}`),
+      error: new Error(`[@x-jsc/static] unsupported platform: ${platform}`),
     };
   }
 
@@ -65,7 +65,7 @@ function sniffBinaryInfo(): BinaryInfo {
 
   return {
     error: new Error(
-      `[@jsc/static] could not find jsc executable, tried: ${possiblePaths.join(', ')}`,
+      `[@x-jsc/static] could not find jsc executable, tried: ${possiblePaths.join(', ')}`,
     ),
   };
 }

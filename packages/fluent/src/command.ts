@@ -1,5 +1,5 @@
 import path from 'path';
-import { isFile } from '@jsc/shared';
+import { isFile } from '@x-jsc/shared';
 import { execAsync, ExecResult } from './exec-async';
 import { JSCError, ERROR_TYPE } from './error';
 

@@ -1,8 +1,8 @@
-# @jsc/platform-darwin-x64
+# @x-jsc/platform-darwin-x64
 
-Do not use directly, use `@jsc/static`:
+Do not use directly, use `@x-jsc/static`:
 
 ```
-    npm install --save @jsc/static
+    npm install --save @x-jsc/static
 ```
     
