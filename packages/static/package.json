@@ -1,6 +1,6 @@
 {
   "name": "@x-jsc/static",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "jsc static",
   "author": "malei0311 <leiman0311l@gmail.com>",
   "homepage": "",
@@ -32,9 +32,9 @@
     "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
   },
   "optionalDependencies": {
-    "@x-jsc/platform-darwin-x64": "^0.1.0"
+    "@x-jsc/platform-darwin-x64": "^0.2.0"
   },
   "dependencies": {
-    "@x-jsc/shared": "^0.1.0"
+    "@x-jsc/shared": "^0.2.0"
   }
 }
