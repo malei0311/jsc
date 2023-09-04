@@ -4,7 +4,7 @@
   "version": "independent",
   "command": {
     "version": {
-      "allowBranch": ["master", "feature/*"],
+      "allowBranch": ["main", "feature/*"],
       "conventionalCommits": true
     },
     "publish": {
