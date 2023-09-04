@@ -1,4 +1,5 @@
 import fs from 'fs';
+import fsPromise from 'fs/promises';
 
 export function isFileSync(filePath: string) {
   try {
@@ -7,6 +8,13 @@ export function isFileSync(filePath: string) {
   } catch (ignored) {
     return false;
   }
+}
+
+export function isFile(filePath: string) {
+  return fsPromise
+    .stat(filePath)
+    .then((stats) => stats.isFile())
+    .catch(() => false);
 }
 
 export function readJSONSync<T = any>(filePath: string) {

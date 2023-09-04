@@ -6,33 +6,39 @@ import { noop, isNil } from '@jsc/shared';
 
 type Resolve = (out: ExecResult) => void;
 
+interface ExecResultParams {
+  exitCode: number | null;
+  signal: NodeJS.Signals | null;
+  stdout: string;
+  stderr: string;
+  message: string;
+}
+
 export class ExecResult extends Error {
   public readonly exitCode: number | null;
   public readonly signal: NodeJS.Signals | null;
   public readonly stdout: string;
   public readonly stderr: string;
 
-  constructor(
-    code: number | null,
-    signal: NodeJS.Signals | null,
-    stdout: string,
-    stderr: string,
-    message: string,
-  ) {
+  constructor({ exitCode, signal, stdout, stderr, message }: ExecResultParams) {
     super(message);
-    this.exitCode = code;
+    this.exitCode = exitCode;
     this.signal = signal;
     this.stdout = stdout;
     this.stderr = stderr;
   }
 
+  toJSON() {
+    return {
+      code: this.exitCode,
+      signal: this.signal,
+      stdout: this.stdout,
+      stderr: this.stderr,
+    };
+  }
+
   toString() {
-    return `ExecResult {
-  code: ${this.exitCode},
-  signal: ${inspect(this.signal)},
-  stdout: ${inspect(this.stdout)},
-  stderr: ${inspect(this.stderr)},
-}`;
+    return `ExecResult ${JSON.stringify(this.toJSON(), null, 2)}}`;
   }
 
   [inspect.custom]() {
@@ -114,7 +120,7 @@ class ExecPromise extends Promise<ExecResult> {
           message += `\n    signal: ${signal}`;
         }
       }
-      const result = new ExecResult(code, signal, stdout, stderr, message);
+      const result = new ExecResult({ exitCode: code, signal, stdout, stderr, message });
       if (code === 0) {
         this.resolve(result);
       } else {
@@ -124,7 +130,7 @@ class ExecPromise extends Promise<ExecResult> {
 
     this.child.on('error', (err: NodeJS.ErrnoException) => {
       const message = `${err.message}\n    errno: ${err.errno}\n    code: ${err.code}\n`;
-      this.reject(new ExecResult(null, null, stdout, stderr, message));
+      this.reject(new ExecResult({ exitCode: null, signal: null, stdout, stderr, message }));
     });
 
     this.child.stdout?.on('data', (data: any) => {
