@@ -1,6 +1,6 @@
 {
   "name": "@jsc/fluent",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "a fluent api to jsc",
   "author": "malei0311 <leiman0311l@gmail.com>",
   "homepage": "",
@@ -31,6 +31,6 @@
     "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
   },
   "dependencies": {
-    "@jsc/shared": "^0.0.1"
+    "@jsc/shared": "^0.1.0"
   }
 }

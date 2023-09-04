@@ -1,6 +1,6 @@
 {
   "name": "@jsc/platform-darwin-x64",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "MacOS x64 binary for JSC",
   "author": "malei0311 <leiman0311l@gmail.com>",
   "homepage": "",
