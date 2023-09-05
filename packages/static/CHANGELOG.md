@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/malei0311/jsc/compare/@x-jsc/static@0.2.0...@x-jsc/static@0.2.1) (2023-09-05)
+
+### Bug Fixes
+
+- 🏷️ fix BinaryInfo type ([250e97f](https://github.com/malei0311/jsc/commit/250e97f9b2872e5a923336a35889e5def3755586))
+
 # 0.2.0 (2023-09-04)
 
 ### Bug Fixes
