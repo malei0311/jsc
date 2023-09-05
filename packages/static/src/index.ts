@@ -5,9 +5,10 @@ import { fileURLToPath } from 'url';
 
 type BinaryInfo =
   | {
-      error: Error | null;
+      error: Error;
     }
   | {
+      error: null;
       path: string;
       version: string;
     };
@@ -57,6 +58,7 @@ function sniffBinaryInfo(): BinaryInfo {
     const packageBinaryPath = path.join(packagePath, binaryName);
     if (isFileSync(packageBinaryPath)) {
       return {
+        error: null,
         path: packageBinaryPath,
         version: getBinaryVersion(packagePath),
       };
