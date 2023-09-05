@@ -1,0 +1,37 @@
+{
+  "name": "@x-jsc/bench",
+  "version": "0.1.0",
+  "description": "jsc benchmark",
+  "author": "malei0311 <leiman0311l@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "import": "./lib/index.mjs",
+    "require": "./lib/index.cjs"
+  },
+  "main": "lib/index.cjs",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "!lib/dts"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:malei0311/jsc.git",
+    "directory": "packages/bench"
+  },
+  "engines": {
+    "node": ">=16.13.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
+  },
+  "dependencies": {
+    "@x-jsc/shared": "^0.2.0"
+  }
+}
