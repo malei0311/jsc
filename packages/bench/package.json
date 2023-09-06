@@ -1,6 +1,6 @@
 {
   "name": "@x-jsc/bench",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "jsc benchmark",
   "author": "malei0311 <leiman0311l@gmail.com>",
   "homepage": "",
@@ -32,6 +32,6 @@
     "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
   },
   "dependencies": {
-    "@x-jsc/shared": "^0.2.0"
+    "@x-jsc/shared": "^0.2.1"
   }
 }

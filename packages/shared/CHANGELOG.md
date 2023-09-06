@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/malei0311/jsc/compare/@x-jsc/shared@0.2.0...@x-jsc/shared@0.2.1) (2023-09-06)
+
+### Bug Fixes
+
+- 🐛 move noop to utils ([5da624d](https://github.com/malei0311/jsc/commit/5da624d50fa036a2e52772369b8efd60672fbeae))
+
 # 0.2.0 (2023-09-04)
 
 ### Bug Fixes
