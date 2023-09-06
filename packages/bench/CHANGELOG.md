@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/malei0311/jsc/compare/@x-jsc/bench@0.2.0...@x-jsc/bench@0.2.1) (2023-09-06)
+
+### Bug Fixes
+
+- 🐛 use preciseTime to improve precision ([a75c2e3](https://github.com/malei0311/jsc/commit/a75c2e3a8d5d04aedc3125c50c6a5f79c701aa45))
+
 # 0.2.0 (2023-09-05)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/malei0311/jsc/compare/@x-jsc/fluent@0.2.0...@x-jsc/fluent@0.2.1) (2023-09-06)
+
+### Bug Fixes
+
+- 🐛 add vm options to jsc fluent ([0b64f6a](https://github.com/malei0311/jsc/commit/0b64f6a2746f9bf66d44848394e88af1d2dbde8a))
+
 # 0.2.0 (2023-09-04)
 
 ### Bug Fixes
