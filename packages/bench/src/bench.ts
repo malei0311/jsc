@@ -1,5 +1,6 @@
 import type { TaskFn } from './task';
 import { Task } from './task';
+import { now } from './now';
 
 interface BenchOptions {
   time?: number;
@@ -7,10 +8,6 @@ interface BenchOptions {
   warmupTime?: number;
   autoWarmup?: boolean;
   now?: () => number;
-}
-
-function now() {
-  return Date.now();
 }
 
 function noop() {}
