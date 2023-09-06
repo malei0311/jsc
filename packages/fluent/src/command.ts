@@ -2,6 +2,7 @@ import path from 'path';
 import { isFile } from '@x-jsc/shared';
 import { execAsync, ExecResult } from './exec-async';
 import { JSCError, ERROR_TYPE } from './error';
+import type { VMOptions } from './vm-options';
 
 interface JSCCommandOptions {
   cwd: string;
@@ -17,6 +18,7 @@ interface JSCCommandOptions {
   moduleFiles: string[];
   evalCodes: string[];
   profileFilePath?: string;
+  vmOptions: Partial<VMOptions>;
 }
 
 const JSC_PATH = 'JSC_PATH';
@@ -40,6 +42,7 @@ export class JSCCommand {
     strictFiles: [],
     moduleFiles: [],
     evalCodes: [],
+    vmOptions: {},
   };
 
   cwd(cwd: string) {
@@ -112,6 +115,11 @@ export class JSCCommand {
     return this;
   }
 
+  vmOptions(vmOptions: Partial<VMOptions>) {
+    this.options.vmOptions = vmOptions;
+    return this;
+  }
+
   private async resolveCommand() {
     let { jscPath } = this.options;
     if (!jscPath) {
@@ -149,7 +157,18 @@ export class JSCCommand {
     if (args.length) {
       args.unshift('--');
     }
-    return commandArgs.concat(evalCodes, strictFilesArgs, moduleFilesArgs, filesArgs, args);
+    const vmOptionsArgs = Object.entries(this.options.vmOptions).map(([key, value]) => {
+      const newValue = key === 'configFile' ? filePathMapper(value as string) : value;
+      return `--${key}=${newValue}`;
+    });
+    return commandArgs.concat(
+      vmOptionsArgs,
+      evalCodes,
+      strictFilesArgs,
+      moduleFilesArgs,
+      filesArgs,
+      args,
+    );
   }
 
   async run() {

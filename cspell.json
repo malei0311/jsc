@@ -5,8 +5,5 @@
   // language - current active spelling language
   "language": "en",
   // words - list of words to be always considered correct
-  "words": [
-    "filesize",
-    "tsbuildinfo"
-  ]
+  "words": ["filesize", "tsbuildinfo", "booleanish"]
 }
