@@ -161,9 +161,14 @@ export class JSCCommand {
       const newValue = key === 'configFile' ? filePathMapper(value as string) : value;
       return `--${key}=${newValue}`;
     });
+    const evalCodesArgs = evalCodes.reduce((acc: string[], code) => {
+      acc.push('-e');
+      acc.push(code);
+      return acc;
+    }, []);
     return commandArgs.concat(
       vmOptionsArgs,
-      evalCodes,
+      evalCodesArgs,
       strictFilesArgs,
       moduleFilesArgs,
       filesArgs,
