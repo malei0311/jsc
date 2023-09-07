@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/malei0311/jsc/compare/@x-jsc/bench@0.2.2...@x-jsc/bench@0.3.0) (2023-09-07)
+
+### Features
+
+- ✨ add task hook ([b5c5993](https://github.com/malei0311/jsc/commit/b5c599342dada89f8ba857569010658fc3f0ae48))
+
 ## [0.2.2](https://github.com/malei0311/jsc/compare/@x-jsc/bench@0.2.1...@x-jsc/bench@0.2.2) (2023-09-06)
 
 **Note:** Version bump only for package @x-jsc/bench
