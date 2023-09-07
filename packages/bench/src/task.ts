@@ -22,6 +22,13 @@ interface TaskResultSuccess {
 
 export type TaskResult = TaskResultSuccess | TaskResultError;
 
+export interface TaskOptions {
+  beforeAll?: (this: Task) => void;
+  beforeEach?: (this: Task) => void;
+  afterEach?: (this: Task) => void;
+  afterAll?: (this: Task) => void;
+}
+
 function calcResult(totalTime: number, samples: number[]): TaskResultSuccess {
   samples.sort((a, b) => a - b);
   const len = samples.length;
@@ -52,11 +59,19 @@ function calcResult(totalTime: number, samples: number[]): TaskResultSuccess {
 export class Task {
   name: string;
   fn: TaskFn;
+  options: TaskOptions;
   result?: TaskResult;
 
-  constructor(name: string, fn: TaskFn) {
+  constructor(name: string, fn: TaskFn, options?: TaskOptions) {
     this.name = name;
     this.fn = fn;
+    this.options = options || {};
+  }
+
+  runHook<Key extends keyof TaskOptions>(name: Key) {
+    if (typeof this.options[name] === 'function') {
+      (this.options[name] as Required<TaskOptions>[Key]).call(this);
+    }
   }
 
   run(bench: Bench) {
@@ -64,14 +79,18 @@ export class Task {
     let totalTime = 0;
     let runs = 0;
     const samples: number[] = [];
+    this.runHook('beforeAll');
+
     try {
       while (totalTime < bench.time || runs < bench.iterations) {
+        this.runHook('beforeEach');
         const startTime = bench.now();
         this.fn();
         const taskTime = bench.now() - startTime;
         samples.push(taskTime);
         runs += 1;
         totalTime += taskTime;
+        this.runHook('afterEach');
       }
     } catch (err) {
       let fixedErr: Error;
@@ -80,22 +99,28 @@ export class Task {
       } else {
         fixedErr = new Error(`${err}`, { cause: err });
       }
+      this.runHook('afterAll');
       this.result = { error: fixedErr };
       return this;
     }
+    this.runHook('afterAll');
     this.result = calcResult(totalTime, samples);
     return this;
   }
 
   warmup(bench: Bench) {
+    this.runHook('beforeAll');
     try {
       const startTime = bench.now();
       while (bench.now() - startTime < bench.warmupTime) {
+        this.runHook('beforeEach');
         this.fn();
+        this.runHook('afterEach');
       }
     } catch (err) {
       // ignore
     }
+    this.runHook('afterAll');
   }
 
   reset() {

@@ -1,4 +1,4 @@
-import type { TaskFn } from './task';
+import type { TaskFn, TaskOptions } from './task';
 import { Task } from './task';
 import { now } from './now';
 
@@ -55,8 +55,8 @@ export class Bench {
     });
   }
 
-  add(name: string, fn: TaskFn) {
-    const task = new Task(name, fn);
+  add(name: string, fn: TaskFn, options?: TaskOptions) {
+    const task = new Task(name, fn, options);
     this._tasks.set(name, task);
     return this;
   }
