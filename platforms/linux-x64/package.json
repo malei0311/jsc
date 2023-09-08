@@ -1,6 +1,6 @@
 {
   "name": "@x-jsc/platform-linux-x64",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Linux x64 binary for JSC",
   "author": "malei0311 <leiman0311l@gmail.com>",
   "homepage": "",

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/malei0311/jsc/compare/@x-jsc/static@0.2.2...@x-jsc/static@0.2.3) (2023-09-08)
+
+### Bug Fixes
+
+- 🐛 add optional dependency: platform-linux-x64 ([d612857](https://github.com/malei0311/jsc/commit/d612857336c79f7b02d2f60a2af0a07f3c0615cf))
+
 ## [0.2.2](https://github.com/malei0311/jsc/compare/@x-jsc/static@0.2.1...@x-jsc/static@0.2.2) (2023-09-06)
 
 **Note:** Version bump only for package @x-jsc/static

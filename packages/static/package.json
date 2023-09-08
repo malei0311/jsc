@@ -1,6 +1,6 @@
 {
   "name": "@x-jsc/static",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "jsc static",
   "author": "malei0311 <leiman0311l@gmail.com>",
   "homepage": "",
@@ -33,7 +33,7 @@
   },
   "optionalDependencies": {
     "@x-jsc/platform-darwin-x64": "^0.2.0",
-    "@x-jsc/platform-linux-x64": "^0.0.1"
+    "@x-jsc/platform-linux-x64": "^0.1.0"
   },
   "dependencies": {
     "@x-jsc/shared": "^0.2.1"
