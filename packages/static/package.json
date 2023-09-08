@@ -32,7 +32,8 @@
     "build": "NODE_ENV=production INPUT_FILE=src/index.ts rollup -c ../../rollup.config.mjs"
   },
   "optionalDependencies": {
-    "@x-jsc/platform-darwin-x64": "^0.2.0"
+    "@x-jsc/platform-darwin-x64": "^0.2.0",
+    "@x-jsc/platform-linux-x64": "^0.0.1"
   },
   "dependencies": {
     "@x-jsc/shared": "^0.2.1"
